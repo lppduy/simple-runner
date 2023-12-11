@@ -1,0 +1,290 @@
+[
+  {
+    "__type__": "cc.Prefab",
+    "_name": "",
+    "_objFlags": 0,
+    "_native": "",
+    "data": {
+      "__id__": 1
+    },
+    "optimizationPolicy": 0,
+    "asyncLoadAssets": false,
+    "readonly": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "Spine Boy",
+    "_objFlags": 0,
+    "_parent": null,
+    "_children": [],
+    "_active": true,
+    "_level": 1,
+    "_components": [
+      {
+        "__id__": 2
+      },
+      {
+        "__id__": 3
+      },
+      {
+        "__id__": 4
+      },
+      {
+        "__id__": 5
+      }
+    ],
+    "_prefab": {
+      "__id__": 6
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 419.76,
+      "height": 686.08
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_position": {
+      "__type__": "cc.Vec3",
+      "x": -322.781,
+      "y": -188.29,
+      "z": 0
+    },
+    "_scale": {
+      "__type__": "cc.Vec3",
+      "x": 0.2,
+      "y": 0.2,
+      "z": 1
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "sp.Skeleton",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "7afd064b-113f-480e-b793-8817d19f63c3"
+      }
+    ],
+    "paused": false,
+    "defaultSkin": "",
+    "defaultAnimation": "run",
+    "_preCacheMode": 0,
+    "_cacheMode": 0,
+    "loop": true,
+    "premultipliedAlpha": true,
+    "timeScale": 1,
+    "_accTime": 0,
+    "_playCount": 0,
+    "_frameCache": null,
+    "_curFrame": null,
+    "_skeletonCache": null,
+    "_animationName": "run",
+    "_animationQueue": [],
+    "_headAniInfo": null,
+    "_playTimes": 0,
+    "_isAniComplete": true,
+    "_N$skeletonData": {
+      "__uuid__": "6cb29e26-e143-430c-bbb6-8b99d907351f"
+    },
+    "_N$_defaultCacheMode": 0,
+    "_N$debugSlots": false,
+    "_N$debugBones": false,
+    "_N$useTint": false,
+    "_N$enableBatch": false,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.RigidBody",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "_type": 2,
+    "_allowSleep": true,
+    "_gravityScale": 3,
+    "_linearDamping": 0,
+    "_angularDamping": 0,
+    "_linearVelocity": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_angularVelocity": 0,
+    "_fixedRotation": true,
+    "enabledContactListener": false,
+    "bullet": false,
+    "awakeOnLoad": false,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PhysicsPolygonCollider",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "tag": 0,
+    "_density": 1,
+    "_sensor": false,
+    "_friction": 0.2,
+    "_restitution": 0,
+    "body": null,
+    "_offset": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "points": [
+      {
+        "__type__": "cc.Vec2",
+        "x": -6,
+        "y": 11
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": -6,
+        "y": 0
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": -4,
+        "y": -1
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": -6,
+        "y": -3
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": -5,
+        "y": -11
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 4,
+        "y": -10
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 6,
+        "y": -8
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 6,
+        "y": -6
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 3,
+        "y": -6
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 6,
+        "y": -5
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 6,
+        "y": -3
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 3,
+        "y": -3
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 3,
+        "y": -1
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 5,
+        "y": 0
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 5,
+        "y": 4
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 7,
+        "y": 4
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 7,
+        "y": 6
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 5,
+        "y": 6
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 2,
+        "y": 10
+      }
+    ],
+    "_id": ""
+  },
+  {
+    "__type__": "f0ab80ONOdNGp7cgq8jwH+V",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "_canJump": true,
+    "spineBoy": {
+      "__id__": 2
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "ffda8978-5650-4c43-aebb-3f32c67771c4"
+    },
+    "fileId": "b2aYlxnKtBRLnI6tOLs0pm",
+    "sync": false
+  }
+]
