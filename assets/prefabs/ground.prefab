@@ -125,7 +125,7 @@
     "_angularDamping": 0,
     "_linearVelocity": {
       "__type__": "cc.Vec2",
-      "x": -200,
+      "x": -400,
       "y": 0
     },
     "_angularVelocity": 0,
@@ -177,7 +177,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "6f9d16dd-ce21-4a62-9ddf-9ea86efab717"
+      "__id__": 0
     },
     "fileId": "5bmwbNTahApLB+dCSIn1co",
     "sync": false

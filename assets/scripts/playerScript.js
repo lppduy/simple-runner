@@ -13,6 +13,14 @@ cc.Class({
 
   onBeginContact(contact, selfCollider, otherCollider) {
     this._canJump = true;
+    console.log(otherCollider.name);
+    if (
+      otherCollider.name === 'Bush<PhysicsPolygonCollider>' ||
+      otherCollider.name === 'Cactus2<PhysicsPolygonCollider>' ||
+      otherCollider.name === 'Cactus<PhysicsPolygonCollider>'
+    ) {
+      cc.director.loadScene('menuScene');
+    }
   },
 
   makePlayerJump(event) {

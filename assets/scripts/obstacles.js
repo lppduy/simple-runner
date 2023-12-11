@@ -10,8 +10,9 @@ cc.Class({
   start() {},
 
   update(dt) {
-    if (this.node.position.x <= -(this.node.parent.width + this.node.getContentSize().width)) {
+    if (this.node.position.x <= -this.node.parent.width) {
       this.node.parent.getComponent('Game').spawnCactus();
+      this.node.parent.getComponent('Game').addScore();
       console.log('the cactus has been destroyed');
       this.node.destroy();
     }
