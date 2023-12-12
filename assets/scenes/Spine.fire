@@ -1148,8 +1148,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -374.136,
-      "y": -189.615,
+      "x": -380.305,
+      "y": -191.157,
       "z": 0
     },
     "_scale": {
@@ -1185,7 +1185,7 @@
     ],
     "paused": false,
     "defaultSkin": "",
-    "defaultAnimation": "hoverboard",
+    "defaultAnimation": "run",
     "_preCacheMode": 0,
     "_cacheMode": 0,
     "loop": true,
@@ -1196,7 +1196,7 @@
     "_frameCache": null,
     "_curFrame": null,
     "_skeletonCache": null,
-    "_animationName": "hoverboard",
+    "_animationName": "run",
     "_animationQueue": [],
     "_headAniInfo": null,
     "_playTimes": 0,
@@ -1219,7 +1219,6 @@
       "__id__": 33
     },
     "_enabled": true,
-    "_canJump": true,
     "spineBoy": {
       "__id__": 34
     },
