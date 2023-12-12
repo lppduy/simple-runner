@@ -32,13 +32,10 @@
       },
       {
         "__id__": 7
-      },
-      {
-        "__id__": 8
       }
     ],
     "_prefab": {
-      "__id__": 9
+      "__id__": 8
     },
     "_opacity": 255,
     "_color": {
@@ -79,7 +76,7 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": false,
-    "groupIndex": 0,
+    "groupIndex": 2,
     "_id": ""
   },
   {
@@ -252,56 +249,24 @@
     "_id": ""
   },
   {
-    "__type__": "cc.PhysicsPolygonCollider",
+    "__type__": "cc.BoxCollider",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "tag": 0,
-    "_density": 1,
-    "_sensor": false,
-    "_friction": 0,
-    "_restitution": 0,
-    "body": null,
+    "tag": 2,
     "_offset": {
       "__type__": "cc.Vec2",
       "x": 0,
       "y": 0
     },
-    "points": [
-      {
-        "__type__": "cc.Vec2",
-        "x": -358.635,
-        "y": -353.87
-      },
-      {
-        "__type__": "cc.Vec2",
-        "x": -358.635,
-        "y": 353.87
-      },
-      {
-        "__type__": "cc.Vec2",
-        "x": 358.635,
-        "y": 353.87
-      },
-      {
-        "__type__": "cc.Vec2",
-        "x": 358.635,
-        "y": -353.87
-      }
-    ],
-    "_id": ""
-  },
-  {
-    "__type__": "5e3deFp3VBKXb8aJSE+8zBL",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
+    "_size": {
+      "__type__": "cc.Size",
+      "width": 653.36,
+      "height": 651.42
     },
-    "_enabled": true,
     "_id": ""
   },
   {

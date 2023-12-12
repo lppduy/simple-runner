@@ -6,14 +6,18 @@ cc.Class({
     spineBoy: sp.Skeleton,
     enemyPrefab: cc.Prefab,
     gameScore: cc.Label,
+    resultBoard: cc.Node,
     _score: 0,
     _enemySpeed: -300,
   },
 
   onLoad() {
-    let physicsManager = cc.director.getPhysicsManager();
+    const physicsManager = cc.director.getPhysicsManager();
     physicsManager.enabled = true;
+    const manager = cc.director.getCollisionManager();
+    manager.enabled = true;
     cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.typingCheck, this);
+    this.isPlaying = true;
     this.isEnemyAlive = false;
     this.curEnemy = null;
     this.curText = 'Null';
@@ -21,13 +25,11 @@ cc.Class({
     this.wrongCount = 0;
     this.spawnEnemy();
   },
-
   spawnGround() {
     let newGround = cc.instantiate(this.ground);
     newGround.getComponent(cc.PhysicsBoxCollider).friction = 0;
     newGround.setPosition(1908, -254);
     this.node.addChild(newGround);
-    console.log('the new ground has been added');
   },
   spawnEnemy() {
     const newEnemy = cc.instantiate(this.enemyPrefab);
@@ -40,13 +42,11 @@ cc.Class({
     this.node.addChild(newEnemy);
     this.isEnemyAlive = true;
     newEnemy.getComponent(sp.Skeleton).setCompleteListener((trackEntry, loopCount) => {
-      let animationName = trackEntry.animation.name;
-      if (animationName === 'Dead') {
+      if (trackEntry.animation.name === 'Dead') {
         newEnemy.destroy();
         this.onEnemyDestroyed();
       }
     });
-    console.log('the new enemy has been added');
   },
   onEnemyDestroyed() {
     this.spawnEnemy();
@@ -57,9 +57,11 @@ cc.Class({
     const curKeyChar = String.fromCharCode(curKeyCode);
     if (this.curText === curKeyChar) {
       const shark = this.curEnemy.getComponent(sp.Skeleton);
-      this.spineBoy.addAnimation(1, 'aim', false);
+      this.spineBoy.setAnimation(0, 'idle', false);
+      this.spineBoy.setAnimation(1, 'shoot', false);
+      this.spineBoy.timeScale = 2;
       this.isEnemyAlive = false;
-      shark.getComponent(cc.RigidBody).enabled = false;
+      shark.getComponent(cc.BoxCollider).enabled = false;
       shark.setAnimation(0, 'Dead', false);
       shark.timeScale = 2;
       this.curEnemy.getChildByName('Text').getComponent(cc.Label).node.color = cc.Color.GREEN;
@@ -79,4 +81,33 @@ cc.Class({
     const char = String.fromCharCode(keyCode);
     return char;
   },
+  checkEndGame() {
+    if (this.curEnemy.x <= -555) {
+      return true;
+    } else return false;
+  },
+  onEndGame() {
+    this.isPlaying = false;
+    this.wrongCount++;
+    const content = this.resultBoard.getChildByName('Content');
+    const acc = Math.floor((this.correctCount / (this.correctCount + this.wrongCount)) * 100) || 0;
+    content
+      .getChildByName('Correct Words')
+      .getComponent(cc.Label).string = `Correct words: ${this.correctCount}`;
+    content
+      .getChildByName('Wrong Words')
+      .getComponent(cc.Label).string = `Wrong words: ${this.wrongCount}`;
+    content.getChildByName('Accuracy').getComponent(cc.Label).string = `Accuracy: ${acc}%`;
+    this.resultBoard
+      .getChildByName('Score')
+      .getComponent(cc.Label).string = `Scores: ${this._score}`;
+    this.resultBoard.active = true;
+   cc.director.getPhysicsManager().enabled = false;
+  },
+  update(dt) {
+    if (this.isPlaying && this.checkEndGame()) {
+      this.onEndGame();
+    }
+  },
+  
 });

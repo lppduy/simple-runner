@@ -2,32 +2,24 @@ cc.Class({
   extends: cc.Component,
 
   properties: {
-    _canJump: true,
     spineBoy: sp.Skeleton,
   },
 
   onLoad() {
-    this.node.on('touchstart', this.addForce, this);
-    this.spineBoy.setAnimation(0, 'hoverboard', true);
-    cc.director.preloadScene('menuScene');
+    this.spineBoy.setAnimation(0, 'run', true);
+    this.spineBoy.setCompleteListener((trackEntry, loopCount) => {
+      if (trackEntry.animation.name === 'shoot') {
+        this.spineBoy.timeScale = 1;
+        this.spineBoy.addAnimation(1, 'run', true);
+      }
+      if (trackEntry.animation.name === 'death') {
+        this.spineBoy.clearTracks();
+      }
+    });
   },
-
-  onBeginContact(contact, selfCollider, otherCollider) {
-    this._canJump = true;
-    console.log(otherCollider.name);
-    if (
-      otherCollider.name === 'Bush<PhysicsPolygonCollider>' ||
-      otherCollider.name === 'Cactus2<PhysicsPolygonCollider>' ||
-      otherCollider.name === 'Cactus<PhysicsPolygonCollider>'
-    ) {
-      cc.director.loadScene('menuScene');
-    }
-  },
-
-  addForce() {
-    if (this._canJump) {
-      this.node.getComponent(cc.RigidBody).applyForceToCenter(new cc.Vec2(0, 420), true);
-      this._canJump = false;
+  onCollisionEnter(other, self) {
+    if (other.tag === 2) {
+      this.spineBoy.setAnimation(1, 'death', false);
     }
   },
 });
