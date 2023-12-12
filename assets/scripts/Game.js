@@ -12,10 +12,8 @@ cc.Class({
   },
 
   onLoad() {
-    const physicsManager = cc.director.getPhysicsManager();
-    physicsManager.enabled = true;
-    const manager = cc.director.getCollisionManager();
-    manager.enabled = true;
+    cc.director.getPhysicsManager().enabled = true;
+    cc.director.getCollisionManager().enabled = true;
     cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.typingCheck, this);
     this.isPlaying = true;
     this.isEnemyAlive = false;
@@ -52,18 +50,18 @@ cc.Class({
     this.spawnEnemy();
   },
   typingCheck(e) {
-    if (!this.isEnemyAlive) return;
+    if (!this.isEnemyAlive || !this.isPlaying) return;
     const curKeyCode = e.keyCode;
     const curKeyChar = String.fromCharCode(curKeyCode);
     if (this.curText === curKeyChar) {
       const shark = this.curEnemy.getComponent(sp.Skeleton);
+      this.spineBoy.timeScale = 2;
       this.spineBoy.setAnimation(0, 'idle', false);
       this.spineBoy.setAnimation(1, 'shoot', false);
-      this.spineBoy.timeScale = 2;
       this.isEnemyAlive = false;
       shark.getComponent(cc.BoxCollider).enabled = false;
-      shark.setAnimation(0, 'Dead', false);
       shark.timeScale = 2;
+      shark.setAnimation(0, 'Dead', false);
       this.curEnemy.getChildByName('Text').getComponent(cc.Label).node.color = cc.Color.GREEN;
       this.addScore();
       this.correctCount++;
