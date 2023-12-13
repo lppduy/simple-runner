@@ -7,6 +7,7 @@ cc.Class({
     enemyPrefab: cc.Prefab,
     gameScore: cc.Label,
     resultBoard: cc.Node,
+    restartBtn: cc.Button,
     _score: 0,
     _enemySpeed: -300,
   },
@@ -15,6 +16,8 @@ cc.Class({
     cc.director.getPhysicsManager().enabled = true;
     cc.director.getCollisionManager().enabled = true;
     cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.typingCheck, this);
+    this.restartBtn.node.on('mousedown', this.handleRestart, this);
+
     this.isPlaying = true;
     this.isEnemyAlive = false;
     this.curEnemy = null;
@@ -22,6 +25,9 @@ cc.Class({
     this.correctCount = 0;
     this.wrongCount = 0;
     this.spawnEnemy();
+  },
+  handleRestart() {
+    cc.director.loadScene('menuScene');
   },
   spawnGround() {
     let newGround = cc.instantiate(this.ground);
@@ -100,12 +106,11 @@ cc.Class({
       .getChildByName('Score')
       .getComponent(cc.Label).string = `Scores: ${this._score}`;
     this.resultBoard.active = true;
-   cc.director.getPhysicsManager().enabled = false;
+    cc.director.getPhysicsManager().enabled = false;
   },
   update(dt) {
     if (this.isPlaying && this.checkEndGame()) {
       this.onEndGame();
     }
   },
-  
 });
