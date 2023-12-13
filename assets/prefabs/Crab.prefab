@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "ground",
+    "_name": "Crab",
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
@@ -28,13 +28,10 @@
       },
       {
         "__id__": 4
-      },
-      {
-        "__id__": 5
       }
     ],
     "_prefab": {
-      "__id__": 6
+      "__id__": 5
     },
     "_opacity": 255,
     "_color": {
@@ -46,8 +43,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 960,
-      "height": 128
+      "width": 168.34,
+      "height": 137.56
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -56,8 +53,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 0,
-      "y": -254,
+      "x": 1092.517,
+      "y": -197,
       "z": 0
     },
     "_scale": {
@@ -79,7 +76,7 @@
     "_id": ""
   },
   {
-    "__type__": "cc.Sprite",
+    "__type__": "sp.Skeleton",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -88,26 +85,35 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+        "__uuid__": "7afd064b-113f-480e-b793-8817d19f63c3"
       }
     ],
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "c6e67684-7834-4cdf-9714-f59bafd081e3"
+    "paused": false,
+    "defaultSkin": "",
+    "defaultAnimation": "Walk",
+    "_preCacheMode": 0,
+    "_cacheMode": 0,
+    "loop": true,
+    "premultipliedAlpha": true,
+    "timeScale": 1,
+    "_accTime": 0,
+    "_playCount": 0,
+    "_frameCache": null,
+    "_curFrame": null,
+    "_skeletonCache": null,
+    "_animationName": "Walk",
+    "_animationQueue": [],
+    "_headAniInfo": null,
+    "_playTimes": 0,
+    "_isAniComplete": true,
+    "_N$skeletonData": {
+      "__uuid__": "f8e264b9-a435-4813-a379-8aa64aecf696"
     },
-    "_type": 2,
-    "_sizeMode": 0,
-    "_fillType": 0,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": true,
-    "_atlas": null,
+    "_N$_defaultCacheMode": 0,
+    "_N$debugSlots": false,
+    "_N$debugBones": false,
+    "_N$useTint": false,
+    "_N$enableBatch": false,
     "_id": ""
   },
   {
@@ -120,23 +126,23 @@
     "_enabled": true,
     "_type": 1,
     "_allowSleep": true,
-    "_gravityScale": 0,
+    "_gravityScale": 1,
     "_linearDamping": 0,
     "_angularDamping": 0,
     "_linearVelocity": {
       "__type__": "cc.Vec2",
-      "x": -400,
+      "x": -200,
       "y": 0
     },
     "_angularVelocity": 0,
-    "_fixedRotation": false,
+    "_fixedRotation": true,
     "enabledContactListener": true,
     "bullet": false,
     "awakeOnLoad": true,
     "_id": ""
   },
   {
-    "__type__": "cc.PhysicsBoxCollider",
+    "__type__": "cc.BoxCollider",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -144,11 +150,6 @@
     },
     "_enabled": true,
     "tag": 0,
-    "_density": 1,
-    "_sensor": false,
-    "_friction": 0,
-    "_restitution": 0,
-    "body": null,
     "_offset": {
       "__type__": "cc.Vec2",
       "x": 0,
@@ -156,19 +157,9 @@
     },
     "_size": {
       "__type__": "cc.Size",
-      "width": 960,
-      "height": 128
+      "width": 168.34,
+      "height": 137.56
     },
-    "_id": ""
-  },
-  {
-    "__type__": "6b744lrHKRGW6Btnk2sE421",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
     "_id": ""
   },
   {
@@ -177,9 +168,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "22e56f00-7b70-448d-ae6d-c4d14bde97c6"
+      "__uuid__": "7cfc7f1d-6f24-4eb1-b220-70ada9370c01"
     },
-    "fileId": "5bmwbNTahApLB+dCSIn1co",
+    "fileId": "103bkDr8tLKYaC2T4/yJpF",
     "sync": false
   }
 ]
